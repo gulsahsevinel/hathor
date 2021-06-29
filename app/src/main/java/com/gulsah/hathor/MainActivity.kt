@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         //sil()
         //tumUrunler()
         //uyeOl()
-        //giris()
+        giris()
 
         
     }
@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity() {
     fun giris (){
         udao.giris_yap("gulsahsevinel@gmail.com","gulsah123").enqueue(object : Callback<UsersResponse>{
             override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
+
+
+
                 if (response == null)
                 {
                     Log.e("deger","${response.body()!!.success}")

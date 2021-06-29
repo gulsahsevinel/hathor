@@ -1,12 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">hathor</string>
     <string name="welcome_back">Welcome Back!</string>
-    <string name="continue_the_journey">Let&apos;s continue the journey</string>
+    <string name="continue_the_journey">Let\'s continue the journey</string>
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="forgotten_password">Forgotten password?</string>
     <string name="sign_in">SIGN IN</string>
-    <string name="dont_have_an_account">Don&apos;t have an account?</string>
-    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
     <string name="logo">Logo</string>
 </resources>
