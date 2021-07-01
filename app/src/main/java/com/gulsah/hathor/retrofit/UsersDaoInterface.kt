@@ -21,7 +21,7 @@ interface UsersDaoInterface {
     @POST("giris_yap.php")
     @FormUrlEncoded
     fun giris_yap(
-        @Field("mail_adres") user_mail : String,
-        @Field("sifre") user_password : String
+        @Field("mail_adres") user_mail: String,
+        @Field("sifre") user_password: String
     ) : Call<UsersResponse>
 }

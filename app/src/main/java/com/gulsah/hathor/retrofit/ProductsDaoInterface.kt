@@ -22,6 +22,7 @@ interface ProductsDaoInterface {
         @Field("urun_fiyat") urun_fiyat: Double,
         @Field("urun_aciklama") urun_aciklama: String,
         @Field("urun_gorsel_url") urun_gorsel_url: String,
+        @Field("sepet_durum") sepet_durum: Int,
         @Field("urun_indirimli_mi") urun_indirimli_mi: Int,
     ): Call<CRUDResponse>
 
