@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/productsFragment"
+        android:icon="@drawable/ic_baseline_home"
+        android:title="@string/products" />
+    <item
+        android:id="@+id/specialOffersFragment"
+        android:icon="@drawable/ic_baseline_card_giftcard"
+        android:title="@string/special_offers" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_account_circle"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/basketFragment"
+        android:icon="@drawable/ic_baseline_shopping_cart"
+        android:title="@string/basket" />
+</menu>

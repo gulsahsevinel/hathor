@@ -15,4 +15,8 @@
     <string name="phone_number">phone number</string>
     <string name="by_signing_up_you_agree_to_our">By Signing up, you agree to our</string>
     <string name="term_and_conditions">Term and Conditions</string>
+    <string name="products">Products</string>
+    <string name="special_offers">Special Offers</string>
+    <string name="profile">Profile</string>
+    <string name="basket">Basket</string>
 </resources>
