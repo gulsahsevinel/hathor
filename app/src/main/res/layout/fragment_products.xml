@@ -3,6 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="productsFragment"
+            type="com.gulsah.hathor.fragment.ProductsFragment" />
+
+        <variable
+            name="adapter"
+            type="com.gulsah.hathor.ProductsAdapter" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +34,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                tools:context=".fragment.ProductsFragment"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -46,6 +58,7 @@
         </androidx.appcompat.widget.Toolbar>
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="341dp"
             android:layout_height="124dp"
             android:layout_marginTop="34dp"
@@ -57,5 +70,18 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="341dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="33dp"
+            android:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

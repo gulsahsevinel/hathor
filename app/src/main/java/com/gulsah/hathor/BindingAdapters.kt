@@ -1,5 +1,6 @@
 package com.gulsah.hathor
 
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.google.android.material.textfield.TextInputLayout
 
@@ -7,5 +8,9 @@ import com.google.android.material.textfield.TextInputLayout
 fun setError(textInputLayout: TextInputLayout, error: String?) {
     textInputLayout.error = error
     textInputLayout.isErrorEnabled = false != null
+}
 
+@BindingAdapter("android:setPrice")
+fun setPrice(textview: TextView, price: Double) {
+    textview.text = "$price \u20BA"
 }

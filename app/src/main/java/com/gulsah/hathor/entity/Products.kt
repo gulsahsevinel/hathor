@@ -2,6 +2,7 @@ package com.gulsah.hathor.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Products(
     @SerializedName("id")
@@ -29,5 +30,5 @@ data class Products(
     @Expose
     var urun_indirimli_mi: Int,
 
-    ) {
+    ) : Serializable {
 }

@@ -10,7 +10,7 @@ import retrofit2.http.POST
 interface ProductsDaoInterface {
     @POST("urunler.php")
     @FormUrlEncoded //eklenenlerde karakter düzenlemesi vs?
-    fun tumUrunler(
+    fun getProducts(
         @Field("satici_adi") satici_adi: String,
     ): Call<ProductsResponse>
 

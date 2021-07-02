@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
     }*/
 
     fun tumUrunler() {
-        pdao.tumUrunler("gulsahsevinel").enqueue(object : Callback<ProductsResponse> {
+        pdao.getProducts("gulsahsevinel").enqueue(object : Callback<ProductsResponse> {
             override fun onResponse(
                 call: Call<ProductsResponse>,
                 response: Response<ProductsResponse>
