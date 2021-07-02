@@ -31,4 +31,11 @@ interface ProductsDaoInterface {
     fun sepetDurumDegistir(
         @Field("id") id: Int,
     ): Call<CRUDResponse>
+
+    @POST("indirimli_urun_durum_degistir.php")
+    @FormUrlEncoded //eklenenlerde karakter düzenlemesi vs?
+    fun indirimDurumDegistir(
+        @Field("id") id: Int,
+        @Field("urun_indirimli_mi") urun_indirimli_mi: Int
+    ): Call<CRUDResponse>
 }

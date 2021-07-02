@@ -12,15 +12,21 @@ import retrofit2.Response
 class ProductsRepo {
 
     private val productsList: MutableLiveData<List<Products>>
+    private val offersList: MutableLiveData<List<Products>>
     private val pdaoi: ProductsDaoInterface
 
     init {
         pdaoi = ApiUtils.getProductsDaoInterface()
         productsList = MutableLiveData()
+        offersList = MutableLiveData()
     }
 
     fun productsGet(): MutableLiveData<List<Products>> {
         return productsList
+    }
+
+    fun offersGet(): MutableLiveData<List<Products>> {
+        return offersList
     }
 
     fun productsShow() {
@@ -31,6 +37,31 @@ class ProductsRepo {
             ) {
                 val list = response.body()!!.urunler
                 productsList.value = list
+            }
+
+            override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    fun offersShow() {
+        pdaoi.getProducts("gulsahsevinel").enqueue(object : Callback<ProductsResponse> {
+            override fun onResponse(
+                call: Call<ProductsResponse>,
+                response: Response<ProductsResponse>
+            ) {
+                val list = response.body()!!.urunler
+                val tempList = ArrayList<Products>()
+                productsList.value = list
+                for (p in 0 until list.size) {
+                    if (list[p].urun_indirimli_mi == 1) {
+                        tempList.add(list[p])
+                    }
+                    offersList.value = tempList
+
+                }
             }
 
             override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {

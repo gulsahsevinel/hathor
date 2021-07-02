@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         //kayit()
         //sil()
+        /*indirim(580,1)
+        indirim(585,1)
+        indirim(578,1)
+        indirim(589,1)*/
         //tumUrunler()
         //uyeOl()
         //giris()
@@ -62,18 +66,32 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    /*fun giris (){
-        udao.giris_yap("gulsahsevinel@gmail.com","gulsah123").enqueue(object : Callback<UsersResponse>{
-            override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
-                val u = response.body()!!.users
+    fun indirim(id: Int, indirim: Int) {
+        pdao.indirimDurumDegistir(id, indirim).enqueue(object : Callback<CRUDResponse> {
+            override fun onResponse(call: Call<CRUDResponse>, response: Response<CRUDResponse>) {
+                Log.e("response", response.body()!!.success.toString())
+                Log.e("mesaj", response.body()!!.message)
             }
 
-            override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
+            override fun onFailure(call: Call<CRUDResponse>, t: Throwable) {
                 TODO("Not yet implemented")
             }
 
         })
-    }*/
+    }
+
+/*fun giris (){
+    udao.giris_yap("gulsahsevinel@gmail.com","gulsah123").enqueue(object : Callback<UsersResponse>{
+        override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
+            val u = response.body()!!.users
+        }
+
+        override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
+            TODO("Not yet implemented")
+        }
+
+    })
+}*/
 
     fun tumUrunler() {
         pdao.getProducts("gulsahsevinel").enqueue(object : Callback<ProductsResponse> {
@@ -87,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e(" mesaj", "geldi")
                     Log.e(" adi", k.urun_adi)
                     Log.e(" id", k.product_id.toString())
-                    Log.e(" sepet", k.sepet_durum.toString())
+                    Log.e(" sepet", k.urun_indirimli_mi.toString())
                 }
 
             }

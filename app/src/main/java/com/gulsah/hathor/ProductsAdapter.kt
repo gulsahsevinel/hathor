@@ -32,12 +32,9 @@ class ProductsAdapter(var mContext: Context, var productsList: List<Products>) :
         val url = "https://drive.google.com/uc?id=" + product.urun_gorsel_url
         Picasso.get()
             .load(url)
-            .resize(50, 50)
-            .centerCrop()
+            .resize(80, 100).centerInside()
             .into(holder.cardView.imageViewProductImg)
         holder.cardView.productObject = product
-        Log.e("url", url)
-
     }
 
     override fun getItemCount(): Int {
