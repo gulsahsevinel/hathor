@@ -1,6 +1,7 @@
 package com.gulsah.hathor.repo
 
 import androidx.lifecycle.MutableLiveData
+import com.gulsah.hathor.entity.CRUDResponse
 import com.gulsah.hathor.entity.Products
 import com.gulsah.hathor.entity.ProductsResponse
 import com.gulsah.hathor.retrofit.ApiUtils
@@ -36,13 +37,18 @@ class ProductsRepo {
                 response: Response<ProductsResponse>
             ) {
                 val list = response.body()!!.urunler
-                productsList.value = list
+                val tempList = ArrayList<Products>()
+
+                for (p in 0 until list.size) {
+                    if (list[p].urun_indirimli_mi == 0) {
+                        tempList.add(list[p])
+                    }
+                    productsList.value = tempList
+                }
             }
 
             override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
-                TODO("Not yet implemented")
             }
-
         })
     }
 
@@ -54,20 +60,29 @@ class ProductsRepo {
             ) {
                 val list = response.body()!!.urunler
                 val tempList = ArrayList<Products>()
-                productsList.value = list
                 for (p in 0 until list.size) {
                     if (list[p].urun_indirimli_mi == 1) {
                         tempList.add(list[p])
                     }
                     offersList.value = tempList
-
                 }
             }
 
             override fun onFailure(call: Call<ProductsResponse>, t: Throwable) {
-                TODO("Not yet implemented")
             }
 
         })
+    }
+
+    fun addBasket(id: Int, itemNumber: Int) {
+        pdaoi.addBasket(id, itemNumber).enqueue(object : Callback<CRUDResponse> {
+            override fun onResponse(call: Call<CRUDResponse>, response: Response<CRUDResponse>) {
+            }
+
+            override fun onFailure(call: Call<CRUDResponse>, t: Throwable) {
+            }
+
+        })
+
     }
 }

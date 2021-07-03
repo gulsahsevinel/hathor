@@ -20,7 +20,13 @@ class ProductsViewModel : ViewModel() {
 
     private fun productsLoad() {
         pdaor.productsShow()
-    }private fun offersLoad() {
+    }
+
+    private fun offersLoad() {
         pdaor.offersShow()
+    }
+
+    fun addBasket(id: Int, itemNumber: Int) {
+        pdaor.addBasket(id, itemNumber)
     }
 }

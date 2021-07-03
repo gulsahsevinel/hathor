@@ -9,6 +9,7 @@ import androidx.navigation.ui.NavigationUI
 import com.gulsah.hathor.R
 import com.gulsah.hathor.databinding.ActivityMainBinding
 import com.gulsah.hathor.entity.*
+import com.gulsah.hathor.fragment.DetailsFragment
 import com.gulsah.hathor.retrofit.ApiUtils
 import com.gulsah.hathor.retrofit.ProductsDaoInterface
 import com.gulsah.hathor.retrofit.UsersDaoInterface
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
 
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         NavigationUI.setupWithNavController(binding.bottomNav, navHostFragment.navController)
@@ -37,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         //kayit()
         //sil()
-        /*indirim(580,1)
-        indirim(585,1)
-        indirim(578,1)
-        indirim(589,1)*/
+        indirim(580, 1)
+        indirim(585, 1)
+        indirim(578, 1)
+        indirim(589, 1)
         //tumUrunler()
         //uyeOl()
         //giris()
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun indirim(id: Int, indirim: Int) {
-        pdao.indirimDurumDegistir(id, indirim).enqueue(object : Callback<CRUDResponse> {
+        pdao.discountStatus(id, indirim).enqueue(object : Callback<CRUDResponse> {
             override fun onResponse(call: Call<CRUDResponse>, response: Response<CRUDResponse>) {
                 Log.e("response", response.body()!!.success.toString())
                 Log.e("mesaj", response.body()!!.message)
@@ -126,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         sepet_durum: Int,
         urun_indirimli_mi: Int
     ) {
-        pdao.urunEkle(
+        pdao.addProduct(
             satici_adi,
             urun_adi,
             urun_fiyat,
@@ -153,7 +155,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sil() {
-        pdao.sepetDurumDegistir(5).enqueue(object : Callback<CRUDResponse> {
+        pdao.addBasket(5, 1).enqueue(object : Callback<CRUDResponse> {
             override fun onResponse(call: Call<CRUDResponse>, response: Response<CRUDResponse>) {
                 Log.e("response", response.body()!!.success.toString())
                 Log.e("mesaj", response.body()!!.message)

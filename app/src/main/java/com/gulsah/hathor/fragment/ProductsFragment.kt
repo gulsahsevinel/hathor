@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gulsah.hathor.R
 import com.gulsah.hathor.ViewModel.ProductsViewModel
-import com.gulsah.hathor.ProductsAdapter
+import com.gulsah.hathor.adapter.ProductsAdapter
 import com.gulsah.hathor.databinding.FragmentProductsBinding
 import com.gulsah.hathor.retrofit.ApiUtils
 import com.gulsah.hathor.retrofit.ProductsDaoInterface
@@ -31,7 +32,8 @@ class ProductsFragment : Fragment() {
         layout = DataBindingUtil.inflate(inflater, R.layout.fragment_products, container, false)
         pdaoi = ApiUtils.getProductsDaoInterface()
         layout.productsFragment = this
-        layout.rv.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+        layout.rv.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+
 
         viewModel.productsList.observe(viewLifecycleOwner) {
             adapter = ProductsAdapter(requireContext(), it)
@@ -39,6 +41,7 @@ class ProductsFragment : Fragment() {
         }
         return layout.root
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val temp: ProductsViewModel by viewModels()

@@ -14,18 +14,19 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Activity.SignUpActivity"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.LoginActivity"
             android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name=".SplashScreen"/>
-        <activity android:name=".Activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SplashScreen" />
+        <activity android:name=".Activity.MainActivity">
+
         </activity>
 
         <meta-data

@@ -11,6 +11,6 @@ fun setError(textInputLayout: TextInputLayout, error: String?) {
 }
 
 @BindingAdapter("android:setPrice")
-fun setPrice(textview: TextView, price: Double) {
-    textview.text = "$price \u20BA"
+fun setPrice(textview: TextView, price: String) {
+    textview.text = "₺ $price "
 }

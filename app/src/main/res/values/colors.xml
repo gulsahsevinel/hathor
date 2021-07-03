@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#B7A786</color>
     <color name="text_color_grey">#737B7B</color>
+    <color name="text_color_dark_grey">#292929</color>
+    <color name="text_color_light_grey">#F5F5F8</color>
     <color name="text_color_white">#FFFFFFFF</color>
     <color name="text_color_beige">#B7A786</color>
+    <color name="discount_color">#CC042C</color>
 </resources>

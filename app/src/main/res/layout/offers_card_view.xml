@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="250dp"
             android:layout_margin="20dp"
-            android:outlineSpotShadowColor="@color/white"
-            android:outlineAmbientShadowColor="@color/white">
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -33,9 +33,9 @@
                     android:id="@+id/imageViewProductImg"
                     android:layout_width="90dp"
                     android:layout_height="140dp"
+                    android:layout_marginTop="5dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    android:layout_marginTop="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -45,30 +45,41 @@
                     android:id="@+id/textViewProductName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:text="@{productObject.urun_adi}"
                     android:textAlignment="center"
-                    android:textSize="10sp"
+                    android:textSize="11sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageViewProductImg" />
 
                 <TextView
-                    android:id="@+id/textViewProductPrice"
+                    android:id="@+id/discount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:text="@{String.valueOf(productObject.urun_fiyat)}"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/imageButtonProductInfo"
+                    android:text="₺ 99.99"
+                    android:textColor="@color/discount_color"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewProductPrice"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewProductName" />
+
+                <TextView
+                    android:id="@+id/textViewProductPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:setPrice="@{String.valueOf(productObject.urun_fiyat)}"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButtonProductInfo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <ImageButton
                     android:id="@+id/imageButtonProductInfo"

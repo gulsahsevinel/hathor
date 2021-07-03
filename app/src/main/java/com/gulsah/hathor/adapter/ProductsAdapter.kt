@@ -1,12 +1,15 @@
-package com.gulsah.hathor
+package com.gulsah.hathor.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
+import com.gulsah.hathor.R
 import com.gulsah.hathor.databinding.ProductsCardViewBinding
 import com.gulsah.hathor.entity.Products
+import com.gulsah.hathor.fragment.ProductsFragmentDirections
 import com.squareup.picasso.Picasso
 
 class ProductsAdapter(var mContext: Context, var productsList: List<Products>) :
@@ -29,12 +32,16 @@ class ProductsAdapter(var mContext: Context, var productsList: List<Products>) :
 
     override fun onBindViewHolder(holder: ProductsCardHolder, position: Int) {
         val product = productsList.get(position)
-        val url = "https://drive.google.com/uc?id=" + product.urun_gorsel_url
         Picasso.get()
-            .load(url)
-            .resize(80, 100).centerInside()
+            .load("https://drive.google.com/thumbnail?id=${product.urun_gorsel_url}")
+            .error(R.drawable.hy_acid)
             .into(holder.cardView.imageViewProductImg)
         holder.cardView.productObject = product
+
+        holder.cardView.imageButtonProductInfo.setOnClickListener {
+            val transition = ProductsFragmentDirections.transtionDetails(product)
+            Navigation.findNavController(it).navigate(transition)
+        }
     }
 
     override fun getItemCount(): Int {

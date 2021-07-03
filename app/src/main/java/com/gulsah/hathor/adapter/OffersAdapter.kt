@@ -1,6 +1,7 @@
-package com.gulsah.hathor
+package com.gulsah.hathor.adapter
 
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,6 @@ class OffersAdapter(var mContext: Context, var offersList: List<Products>) :
         init {
             this.cardView = offersCardViewBinding
         }
-
     }
 
 
@@ -30,19 +30,25 @@ class OffersAdapter(var mContext: Context, var offersList: List<Products>) :
     }
 
     override fun onBindViewHolder(holder: OffersCardHolder, position: Int) {
-        val product = offersList.get(position)
-        val url = "https://drive.google.com/uc?id=${product.urun_gorsel_url}"
-        //Picasso.get().load(url).into(holder.cardView.imageViewProductImg)
-        Picasso.get()
-            .load(url)
-            .resize(80, 100).centerInside()
-            .into(holder.cardView.imageViewProductImg)
-        holder.cardView.productObject = product
 
+        var discount = listOf<Double>(99.99, 78.99, 99.99, 79.88)
+
+        holder.cardView.textViewProductPrice.apply {
+            paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        }
+        val product = offersList.get(position)
+
+        Picasso.get()
+            .load("https://drive.google.com/thumbnail?id=${product.urun_gorsel_url}")
+            .into(holder.cardView.imageViewProductImg)
+        holder.cardView.discount.text = "₺ ${discount[position]}"
+
+        holder.cardView.productObject = product
 
     }
 
     override fun getItemCount(): Int {
-        return 4
+        return offersList.size
+
     }
 }

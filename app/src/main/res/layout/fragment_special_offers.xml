@@ -11,7 +11,7 @@
 
         <variable
             name="adapter"
-            type="com.gulsah.hathor.OffersAdapter" />
+            type="com.gulsah.hathor.adapter.OffersAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +67,7 @@
             android:layout_width="341dp"
             android:layout_height="0dp"
             android:adapter="@{adapter}"
-            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

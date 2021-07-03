@@ -9,7 +9,14 @@
         android:id="@+id/productsFragment"
         android:name="com.gulsah.hathor.fragment.ProductsFragment"
         android:label="ProductsFragment"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/transtionDetails"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="productEntity"
+            app:argType="com.gulsah.hathor.entity.Products" />
+    </fragment>
     <fragment
         android:id="@+id/specialOffersFragment"
         android:name="com.gulsah.hathor.fragment.SpecialOffersFragment"
@@ -25,4 +32,16 @@
         android:name="com.gulsah.hathor.fragment.BasketFragment"
         android:label="BasketFragment"
         tools:layout="@layout/fragment_basket"/>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.gulsah.hathor.fragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="productObject"
+            app:argType="com.gulsah.hathor.entity.Products" />
+        <action
+            android:id="@+id/transitionProducts"
+            app:destination="@id/productsFragment" />
+    </fragment>
 </navigation>

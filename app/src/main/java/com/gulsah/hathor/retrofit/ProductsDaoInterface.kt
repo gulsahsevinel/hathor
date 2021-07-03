@@ -16,7 +16,7 @@ interface ProductsDaoInterface {
 
     @POST("urun_ekle.php")
     @FormUrlEncoded //eklenenlerde karakter düzenlemesi vs?
-    fun urunEkle(
+    fun addProduct(
         @Field("satici_adi") satici_adi: String,
         @Field("urun_adi") urun_adi: String,
         @Field("urun_fiyat") urun_fiyat: Double,
@@ -28,13 +28,14 @@ interface ProductsDaoInterface {
 
     @POST("sepet_durum_degistir.php")
     @FormUrlEncoded //eklenenlerde karakter düzenlemesi vs?
-    fun sepetDurumDegistir(
+    fun addBasket(
         @Field("id") id: Int,
+        @Field("sepet_durum") sepet_durum: Int,
     ): Call<CRUDResponse>
 
     @POST("indirimli_urun_durum_degistir.php")
     @FormUrlEncoded //eklenenlerde karakter düzenlemesi vs?
-    fun indirimDurumDegistir(
+    fun discountStatus(
         @Field("id") id: Int,
         @Field("urun_indirimli_mi") urun_indirimli_mi: Int
     ): Call<CRUDResponse>

@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.gulsah.hathor.OffersAdapter
-import com.gulsah.hathor.ProductsAdapter
+import com.gulsah.hathor.adapter.OffersAdapter
 import com.gulsah.hathor.R
 import com.gulsah.hathor.ViewModel.ProductsViewModel
-import com.gulsah.hathor.databinding.FragmentProductsBinding
 import com.gulsah.hathor.databinding.FragmentSpecialOffersBinding
 import com.gulsah.hathor.retrofit.ApiUtils
 import com.gulsah.hathor.retrofit.ProductsDaoInterface
@@ -34,7 +33,9 @@ class SpecialOffersFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_special_offers, container, false)
         pdaoi = ApiUtils.getProductsDaoInterface()
         layout.offersFragment = this
-        layout.rv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+        layout.rv.layoutManager = GridLayoutManager(context,2, GridLayoutManager.VERTICAL,false)
+
         viewModel.offersList.observe(viewLifecycleOwner) {
             adapter = OffersAdapter(requireContext(), it)
             layout.adapter = adapter
