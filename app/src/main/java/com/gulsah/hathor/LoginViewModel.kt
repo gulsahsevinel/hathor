@@ -43,9 +43,7 @@ class LoginViewModel : ViewModel() {
         passwordError.value = passwordValidator.validate(passwordLivaData.value)
     }
 
-    fun kayit(email: String, password: String, fullName: String, phoneNumber: String) {
-        ldaor.SignUp(email, password, fullName, phoneNumber)
-    }
+
 
 
 }

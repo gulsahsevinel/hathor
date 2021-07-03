@@ -42,22 +42,5 @@ class LoginRepo {
         })
     }
 
-    fun SignUp(email: String, password: String, fullName: String, phoneNumber: String) {
-        udao.uye_ol(email, password, fullName, phoneNumber)
-            .enqueue(object : Callback<CRUDResponse> {
-                override fun onResponse(
-                    call: Call<CRUDResponse>,
-                    response: Response<CRUDResponse>
-                ) {
-                    Log.e("response", response.body()!!.success.toString())
-                    Log.e("mesaj", response.body()!!.message)
-                }
-
-                override fun onFailure(call: Call<CRUDResponse>, t: Throwable) {
-                }
-
-            })
-    }
-
 
 }

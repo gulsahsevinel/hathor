@@ -24,9 +24,11 @@ class ProfileFragment : Fragment() {
 
         val sharedPreferences =
             context?.getSharedPreferences("com.gulsah.hathor", Context.MODE_PRIVATE)
+
         val fullName = sharedPreferences?.getString("STRING_NAME", null)
         val mail = sharedPreferences?.getString("STRING_MAIL", null)
         val phoneNumber = sharedPreferences?.getString("STRING_PHONE", null)
+
         layout.textViewFullName.text = fullName
         layout.textViewMail.text = mail
         layout.textViewPhone.text = phoneNumber

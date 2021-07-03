@@ -17,9 +17,12 @@ import com.gulsah.hathor.R
 import com.gulsah.hathor.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
     private val viewModel: LoginViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding: ActivityLoginBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.lifecycleOwner = this
