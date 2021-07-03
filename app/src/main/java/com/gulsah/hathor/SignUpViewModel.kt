@@ -20,12 +20,12 @@ class SignUpViewModel : ViewModel() {
         success = sdaor.getSuccessValue()
     }
 
-
+    val fullName = first_name.value.toString() + " " + last_name.value.toString()
     fun userSignIn() {
         sdaor.SignUp(
             email.value.toString(),
             password.value.toString(),
-            first_name.value.toString() + last_name.value.toString(),
+            fullName,
             phone_number.value.toString()
         )
     }
