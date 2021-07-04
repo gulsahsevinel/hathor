@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gulsah.hathor.R
+import com.gulsah.hathor.ViewModel.BasketViewModel
 import com.gulsah.hathor.ViewModel.ProductsViewModel
 import com.gulsah.hathor.adapter.ProductsAdapter
 import com.gulsah.hathor.databinding.FragmentProductsBinding
@@ -22,6 +23,7 @@ class ProductsFragment : Fragment() {
     private lateinit var layout: FragmentProductsBinding
     private lateinit var adapter: ProductsAdapter
     private lateinit var viewModel: ProductsViewModel
+
     private lateinit var pdaoi: ProductsDaoInterface
 
     override fun onCreateView(
@@ -36,7 +38,7 @@ class ProductsFragment : Fragment() {
 
 
         viewModel.productsList.observe(viewLifecycleOwner) {
-            adapter = ProductsAdapter(requireContext(), it)
+            adapter = ProductsAdapter(requireContext(), it, viewModel)
             layout.adapter = adapter
         }
         return layout.root

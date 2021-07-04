@@ -7,12 +7,18 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import com.gulsah.hathor.R
+import com.gulsah.hathor.ViewModel.BasketViewModel
+import com.gulsah.hathor.ViewModel.ProductsViewModel
 import com.gulsah.hathor.databinding.ProductsCardViewBinding
 import com.gulsah.hathor.entity.Products
 import com.gulsah.hathor.fragment.ProductsFragmentDirections
 import com.squareup.picasso.Picasso
 
-class ProductsAdapter(var mContext: Context, var productsList: List<Products>) :
+class ProductsAdapter(
+    var mContext: Context,
+    var productsList: List<Products>,
+    var viewModel: ProductsViewModel
+) :
     RecyclerView.Adapter<ProductsAdapter.ProductsCardHolder>() {
 
     inner class ProductsCardHolder(productsCardViewBinding: ProductsCardViewBinding) :
@@ -42,7 +48,11 @@ class ProductsAdapter(var mContext: Context, var productsList: List<Products>) :
             val transition = ProductsFragmentDirections.transtionDetails(product)
             Navigation.findNavController(it).navigate(transition)
         }
+        holder.cardView.imageButtonProductAddBasket.setOnClickListener {
+            viewModel.updateBasket(product.product_id, 1)
+        }
     }
+
 
     override fun getItemCount(): Int {
         return productsList.size
