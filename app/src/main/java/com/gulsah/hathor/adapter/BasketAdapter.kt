@@ -46,6 +46,7 @@ class BasketAdapter(
 
     override fun onBindViewHolder(holder: BasketCardHolder, position: Int) {
         val product = basketList.get(position)
+        var discount = listOf<Double>(99.99, 78.99, 99.99, 79.88)
         Picasso.get()
             .load("https://drive.google.com/thumbnail?id=${product.urun_gorsel_url}")
             .error(R.drawable.hy_acid)
@@ -54,7 +55,7 @@ class BasketAdapter(
         totalPrice = totalPrice + product.urun_fiyat
 
         if (product.urun_indirimli_mi == 1) {
-            holder.cardView.discount.text = "₺ 79.88"
+            holder.cardView.discount.text = "₺ ${discount[position]}"
 
             holder.cardView.textViewPrice.apply {
                 paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
