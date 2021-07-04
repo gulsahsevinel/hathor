@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.gulsah.hathor.R
 import com.gulsah.hathor.databinding.FragmentProfileBinding
 
@@ -32,6 +33,12 @@ class ProfileFragment : Fragment() {
         layout.textViewFullName.text = fullName
         layout.textViewMail.text = mail
         layout.textViewPhone.text = phoneNumber
+
+        layout.imageViewBasket.setOnClickListener {
+            val transition = ProfileFragmentDirections.profileToBasket()
+            Navigation.findNavController(it).navigate(transition)
+            onDestroy()
+        }
 
 
         return layout.root

@@ -70,10 +70,69 @@
             android:layout_height="0dp"
             android:adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="218dp"
+                        android:layout_height="54dp"
+                        android:text="Continue"
+                        android:textAllCaps="false"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="71dp" />
+
+                    <Button
+                        android:id="@+id/buttonTotalPrice"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="123dp"
+                        android:layout_height="54dp"
+                        android:layout_marginStart="-18dp"
+                        android:layout_toEndOf="@+id/button"
+                        android:text="₺ 113.00"
+                        android:textColor="@color/text_color_grey" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

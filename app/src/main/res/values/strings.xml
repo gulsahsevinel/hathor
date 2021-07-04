@@ -27,4 +27,5 @@
     <string name="email_short_error">Email cannot be this short</string>
     <string name="email_invalid_error">Invalid email</string>
     <string name="password_null_error">Password cannot be empty</string>
+    <string name="add_basket">Added to your basket</string>
 </resources>

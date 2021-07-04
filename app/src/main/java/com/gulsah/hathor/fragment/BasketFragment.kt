@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.AdapterListUpdateCallback
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gulsah.hathor.R
-import com.gulsah.hathor.ViewModel.BasketViewModel
-import com.gulsah.hathor.ViewModel.ProductsViewModel
+import com.gulsah.hathor.BasketViewModel
 import com.gulsah.hathor.adapter.BasketAdapter
 import com.gulsah.hathor.databinding.FragmentBasketBinding
+import com.gulsah.hathor.entity.Products
 
 
 class BasketFragment : Fragment() {
@@ -32,9 +34,10 @@ class BasketFragment : Fragment() {
         layout.rv.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
         viewModel.basketList.observe(viewLifecycleOwner) {
-            adapter = BasketAdapter(requireContext(), it)
+            adapter = BasketAdapter(requireContext(), it, viewModel)
             layout.adapter = adapter
         }
+
 
         return layout.root
 
@@ -44,5 +47,8 @@ class BasketFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val temp: BasketViewModel by viewModels()
         viewModel = temp
+
     }
+
+
 }

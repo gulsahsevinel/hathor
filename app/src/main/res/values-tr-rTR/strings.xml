@@ -5,7 +5,7 @@
     <string name="email">mail</string>
     <string name="password">password</string>
     <string name="forgotten_password">Şifreni mi unuttun?</string>
-    <string name="sign_in">GİRİŞ YAP</string>
+    <string name="sign_in">Giriş Yap</string>
     <string name="don_t_have_an_account">Hesabın yok mu?</string>
     <string name="sign_up">Kayıt ol</string>
     <string name="logo">Logo</string>
@@ -27,4 +27,5 @@
     <string name="email_short_error">Mail adresi bu kadar kısa olamaz</string>
     <string name="email_invalid_error">Geçersiz mail adresi</string>
     <string name="password_null_error">Şifre boş olamaz</string>
+    <string name="add_basket">Sepetinize eklendi</string>
 </resources>

@@ -16,17 +16,34 @@
         <argument
             android:name="productEntity"
             app:argType="com.gulsah.hathor.entity.Products" />
+        <action
+            android:id="@+id/productsToBasket"
+            app:destination="@id/basketFragment" />
     </fragment>
     <fragment
         android:id="@+id/specialOffersFragment"
         android:name="com.gulsah.hathor.fragment.SpecialOffersFragment"
         android:label="SpecialOffersFragment"
-        tools:layout="@layout/fragment_special_offers" />
+        tools:layout="@layout/fragment_special_offers" >
+        <action
+            android:id="@+id/offersToBasket"
+            app:destination="@id/basketFragment" />
+        <argument
+            android:name="productEntity"
+            app:argType="com.gulsah.hathor.entity.Products" />
+        <action
+            android:id="@+id/offertsToDetails"
+            app:destination="@id/offersDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.gulsah.hathor.fragment.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/profileToBasket"
+            app:destination="@id/basketFragment" />
+    </fragment>
     <fragment
         android:id="@+id/basketFragment"
         android:name="com.gulsah.hathor.fragment.BasketFragment"
@@ -43,5 +60,17 @@
         <action
             android:id="@+id/transitionProducts"
             app:destination="@id/productsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offersDetailsFragment"
+        android:name="com.gulsah.hathor.fragment.OffersDetailsFragment"
+        android:label="OffersDetailsFragment"
+        tools:layout="@layout/fragment_offers_details">
+        <argument
+            android:name="productObject"
+            app:argType="com.gulsah.hathor.entity.Products" />
+        <action
+            android:id="@+id/detailsToOffers"
+            app:destination="@id/specialOffersFragment" />
     </fragment>
 </navigation>

@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gulsah.hathor.R
-import com.gulsah.hathor.ViewModel.BasketViewModel
 import com.gulsah.hathor.ViewModel.ProductsViewModel
 import com.gulsah.hathor.adapter.ProductsAdapter
 import com.gulsah.hathor.databinding.FragmentProductsBinding
@@ -40,6 +39,12 @@ class ProductsFragment : Fragment() {
         viewModel.productsList.observe(viewLifecycleOwner) {
             adapter = ProductsAdapter(requireContext(), it, viewModel)
             layout.adapter = adapter
+        }
+
+        layout.imageViewBasket.setOnClickListener {
+            val transition = ProductsFragmentDirections.productsToBasket()
+            Navigation.findNavController(it).navigate(transition)
+            onDestroy()
         }
         return layout.root
     }

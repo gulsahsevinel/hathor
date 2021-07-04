@@ -103,6 +103,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto"
             android:text="@string/sign_in"
+            android:textAllCaps="false"
             android:textSize="14sp"
             android:onClick="@{() -> viewModel.userLogin()}"/>
 
