@@ -26,7 +26,4 @@ class ProductsViewModel : ViewModel() {
         pdaor.offersShow()
     }
 
-    fun addBasket(id: Int, itemNumber: Int) {
-        pdaor.addBasket(id, itemNumber)
-    }
 }

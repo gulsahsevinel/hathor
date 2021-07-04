@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">hathor</string>
     <string name="welcome_back">Hoşgeldin!</string>
-    <string name="email">email</string>
+    <string name="email">mail</string>
     <string name="password">password</string>
     <string name="forgotten_password">Şifreni mi unuttun?</string>
     <string name="sign_in">GİRİŞ YAP</string>
@@ -18,4 +18,13 @@
     <string name="phone_number">telefon</string>
     <string name="by_signing_up_you_agree_to_our">Kayıt olarak, kabul etmiş olursun.</string>
     <string name="term_and_conditions">Kullanım Şart ve Koşulları</string>
+    <string name="products">Ürünler</string>
+    <string name="special_offers">Promosyonlar</string>
+    <string name="profile">Profil</string>
+    <string name="basket">Sepet</string>
+    <string name="details">Detaylar</string>
+    <string name="email_null_error">Mail adresi boş olamaz</string>
+    <string name="email_short_error">Mail adresi bu kadar kısa olamaz</string>
+    <string name="email_invalid_error">Geçersiz mail adresi</string>
+    <string name="password_null_error">Şifre boş olamaz</string>
 </resources>

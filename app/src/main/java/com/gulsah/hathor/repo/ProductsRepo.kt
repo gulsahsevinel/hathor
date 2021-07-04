@@ -74,15 +74,5 @@ class ProductsRepo {
         })
     }
 
-    fun addBasket(id: Int, itemNumber: Int) {
-        pdaoi.addBasket(id, itemNumber).enqueue(object : Callback<CRUDResponse> {
-            override fun onResponse(call: Call<CRUDResponse>, response: Response<CRUDResponse>) {
-            }
 
-            override fun onFailure(call: Call<CRUDResponse>, t: Throwable) {
-            }
-
-        })
-
-    }
 }
