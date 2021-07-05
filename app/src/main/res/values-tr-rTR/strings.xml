@@ -29,4 +29,6 @@
     <string name="password_null_error">Şifre boş olamaz</string>
     <string name="add_basket">Sepetinize eklendi</string>
     <string name="sign_up">Giriş Yap</string>
+    <string name="pay">Öde</string>
+    <string name="forgotten_password_message">Bir mail gönderildi.</string>
 </resources>

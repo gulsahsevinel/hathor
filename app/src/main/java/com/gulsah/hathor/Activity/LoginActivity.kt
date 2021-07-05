@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
             mAlertDialog.dismiss()
             Toast.makeText(
                 this,
-                "An email has been sent. Please click the link when you get it.",
+                getString(R.string.forgotten_password_message),
                 Toast.LENGTH_SHORT
             ).show()
         }

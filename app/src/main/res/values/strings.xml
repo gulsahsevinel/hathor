@@ -30,4 +30,5 @@
     <string name="password_null_error">Password cannot be empty</string>
     <string name="add_basket">Added to your basket</string>
     <string name="pay">Pay</string>
+    <string name="forgotten_password_message">An email has been sent. Please click the link when you get it.</string>
 </resources>
