@@ -51,16 +51,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_baseline_shopping_cart"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
@@ -108,14 +98,14 @@
 
                     <Button
                         android:id="@+id/button"
-                        android:layout_width="218dp"
+                        android:layout_width="341dp"
                         android:layout_height="54dp"
-                        android:text="Continue"
+                        android:text="@string/pay"
                         android:textAllCaps="false"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:layout_editor_absoluteX="71dp" />
 
-                    <Button
+                    <!--<Button
                         android:id="@+id/buttonTotalPrice"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="123dp"
@@ -123,7 +113,7 @@
                         android:layout_marginStart="-18dp"
                         android:layout_toEndOf="@+id/button"
                         android:text="₺ 113.00"
-                        android:textColor="@color/text_color_grey" />
+                        android:textColor="@color/text_color_grey" />-->
 
 
                 </RelativeLayout>

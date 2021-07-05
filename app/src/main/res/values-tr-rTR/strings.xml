@@ -7,7 +7,7 @@
     <string name="forgotten_password">Şifreni mi unuttun?</string>
     <string name="sign_in">Giriş Yap</string>
     <string name="don_t_have_an_account">Hesabın yok mu?</string>
-    <string name="sign_up">Kayıt ol</string>
+    <string name="sign_up_textView">Kayıt ol</string>
     <string name="logo">Logo</string>
     <string name="let_s_continue_the_journey">Yolculuğa devam edelim</string>
     <string name="hello_blank_fragment">merhaba</string>
@@ -28,4 +28,5 @@
     <string name="email_invalid_error">Geçersiz mail adresi</string>
     <string name="password_null_error">Şifre boş olamaz</string>
     <string name="add_basket">Sepetinize eklendi</string>
+    <string name="sign_up">Giriş Yap</string>
 </resources>

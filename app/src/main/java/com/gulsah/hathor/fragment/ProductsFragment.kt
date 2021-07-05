@@ -46,6 +46,7 @@ class ProductsFragment : Fragment() {
             Navigation.findNavController(it).navigate(transition)
             onDestroy()
         }
+       
         return layout.root
     }
 

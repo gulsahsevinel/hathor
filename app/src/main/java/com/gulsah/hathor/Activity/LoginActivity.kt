@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
 
             } else if (it[0].user_value == 0) {
-                Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
             }
         }
 

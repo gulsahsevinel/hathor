@@ -1,6 +1,7 @@
 package com.gulsah.hathor.Activity
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,8 +29,13 @@ class SignUpActivity : AppCompatActivity() {
             if (it == 1) {
                 Toast.makeText(this, "başarılı", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "başarısız", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "başarısız", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.signInTextView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
 

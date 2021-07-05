@@ -60,7 +60,7 @@
         </androidx.appcompat.widget.Toolbar>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewOffers"
             android:layout_width="341dp"
             android:layout_height="124dp"
             android:layout_marginTop="34dp"
@@ -84,6 +84,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewOffers" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
