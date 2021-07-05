@@ -52,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
                     getSharedPreferences("com.gulsah.hathor", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.apply {
-                    putInt("INT_USER_ID", it[0].user_id)
                     putString("STRING_NAME", it[0].user_fullName)
                     putString("STRING_MAIL", it[0].user_mail)
                     putString("STRING_PHONE", it[0].user_phoneNumber)
@@ -86,7 +85,11 @@ class LoginActivity : AppCompatActivity() {
         )
         button.setOnClickListener {
             mAlertDialog.dismiss()
-            Toast.makeText(this, "mail gitti", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "An email has been sent. Please click the link when you get it.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
         mAlertDialog.window?.setBackgroundDrawableResource(R.drawable.dialog_background)
     }

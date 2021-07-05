@@ -27,7 +27,7 @@ class SignUpActivity : AppCompatActivity() {
 
         viewModel.success.observe(this) {
             if (it == 1) {
-                Toast.makeText(this, "başarılı", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "successful", Toast.LENGTH_SHORT).show()
             } else {
                 //Toast.makeText(this, "başarısız", Toast.LENGTH_SHORT).show()
             }

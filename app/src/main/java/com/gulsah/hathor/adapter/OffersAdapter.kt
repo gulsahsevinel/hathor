@@ -56,6 +56,11 @@ class OffersAdapter(
         holder.cardView.imageButtonProductAddBasket.setOnClickListener {
             viewModel.updateBasket(product.product_id, 1)
         }
+        holder.cardView.imageViewProductImg.setOnClickListener {
+            val transition =
+                SpecialOffersFragmentDirections.offertsToDetails(product)
+            Navigation.findNavController(it).navigate(transition)
+        }
 
         holder.cardView.imageButtonProductInfo.setOnClickListener {
             val transition =

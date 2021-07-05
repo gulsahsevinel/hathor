@@ -51,6 +51,10 @@ class ProductsAdapter(
             val transition = ProductsFragmentDirections.transtionDetails(product)
             Navigation.findNavController(it).navigate(transition)
         }
+        holder.cardView.imageViewProductImg.setOnClickListener {
+            val transition = ProductsFragmentDirections.transtionDetails(product)
+            Navigation.findNavController(it).navigate(transition)
+        }
         holder.cardView.imageButtonProductAddBasket.setOnClickListener {
             viewModel.updateBasket(product.product_id, 1)
             Toast.makeText(
